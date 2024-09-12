@@ -15,4 +15,7 @@ license = {text = "MIT"}
 
 
 [tool.pdm]
-distribution = false
+distribution = true
+
+[project.scripts]
+food = "lsiwh3724922food.main:food"
