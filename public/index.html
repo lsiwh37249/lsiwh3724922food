@@ -18,7 +18,7 @@
             event.preventDefault(); // 폼 기본 제출 방지
 
             const foodName = document.getElementById("foodName").value;
-            const url = `http://ec2-43-203-204-195.ap-northeast-2.compute.amazonaws.com/n22/food?name=${encodeURIComponent(foodName)}`;
+            const url = `http://localhost:8080/food?name=${encodeURIComponent(foodName)}`;
 
             fetch(url, {
                 method: 'GET',
@@ -27,6 +27,29 @@
                 console.error('Error:', error);
             });
         });
+    </script>
+    <script type="module">
+  	// Import the functions you need from the SDKs you need
+  	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+  	import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+  	// TODO: Add SDKs for Firebase products that you want to use
+  	// https://firebase.google.com/docs/web/setup#available-libraries
+
+  	// Your web app's Firebase configuration
+  	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  	const firebaseConfig = {
+    		apiKey: "AIzaSyBttjKf8_Xsg56aReiM5M4xqJ1c9Et_7d0",
+   		authDomain: "lsiwh3724922.firebaseapp.com",
+    		projectId: "lsiwh3724922",
+    		storageBucket: "lsiwh3724922.appspot.com",
+    		messagingSenderId: "1008007717736",
+    		appId: "1:1008007717736:web:fe59005dca2a93d40aecdd",
+    		measurementId: "G-VW2VZVRF4V"
+  	};
+
+  	// Initialize Firebase
+  	const app = initializeApp(firebaseConfig);
+  	const analytics = getAnalytics(app);
     </script>
 </body>
 </html>
