@@ -9,10 +9,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app =FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
+#    "http://localhost.tiangolo.com",
+#    "https://localhost.tiangolo.com",
     "http://localhost",
-    "http://localhost:8080",
+    "http://localhost:8899",
 ]
 
 app.add_middleware(
@@ -30,6 +30,7 @@ def get_path():
 
 @app.get("/")
 def read_root():
+    print()
     return {"Hello": "world"}
 
 @app.get("/food")
