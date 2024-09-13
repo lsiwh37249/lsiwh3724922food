@@ -13,6 +13,8 @@ origins = [
 #    "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8899",
+    "http://ec2-43-203-204-195.ap-northeast-2.compute.amazonaws.com",
+    "http://ec2-43-203-204-195.ap-northeast-2.compute.amazonaws.com/n22/",
 ]
 
 app.add_middleware(
