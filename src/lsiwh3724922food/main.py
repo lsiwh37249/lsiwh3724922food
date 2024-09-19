@@ -67,8 +67,8 @@ def food(name : str):
     # CSV 파일 저장
     df.to_csv(csv_file_path, index=False)
     
-    #import pymysql.cursors
-    import pymysql
+    import pymysql.cursors
+    #import pymysql
     
     # Connect to the database
     connection = pymysql.connect(host=os.getenv("DB_IP", "localhost"),
