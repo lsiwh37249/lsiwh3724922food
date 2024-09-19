@@ -4,7 +4,7 @@ WORKDIR /code
 
 COPY src/lsiwh3724922food/main.py /code/
 
-RUN pip install --no-cache-dir --upgrade  git+https://github.com/lsiwh37249/lsiwh3724922food.git@0.2.0
+RUN pip install --no-cache-dir --upgrade  git+https://github.com/lsiwh37249/lsiwh3724922food.git@0.2.6
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
 
