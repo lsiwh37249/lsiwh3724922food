@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Food32</title>
+		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -61,14 +61,14 @@
 									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
 									amet nullam sed etiam veroeros.</p>
 								</header>
-								<!-- <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
 								<ul class="actions special">
 									<li><a href="#" class="button large">Full Story</a></li>
-								</ul> -->
+								</ul>
 							</article>
 
 						<!-- Posts -->
-							<!-- <section class="posts">
+							<section class="posts">
 								<article>
 									<header>
 										<span class="date">April 24, 2017</span>
@@ -141,36 +141,49 @@
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
-							</section> -->
+							</section>
 
-
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
 
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="get" action="#">
+							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
-										<label for="foodName">Name</label>
-										<input type="text" name="foodName" id="name" />
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
 									</div>
-									<!-- <div class="field">
+									<div class="field">
 										<label for="email">Email</label>
 										<input type="text" name="email" id="email" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
 										<textarea name="message" id="message" rows="3"></textarea>
-									</div> -->
+									</div>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
 								</ul>
 							</form>
 						</section>
-						<!-- <section class="split contact">
+						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
 								<p>1234 Somewhere Road #87257<br />
@@ -193,7 +206,7 @@
 									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
-						</section> -->
+						</section>
 					</footer>
 
 				<!-- Copyright -->
@@ -211,23 +224,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-				document.getElementById("foodForm").addEventListener("submit", function(event) {
-					event.preventDefault(); // 폼 기본 제출 방지
-		
-					const foodName = document.getElementById("foodName").value;
-					const url = `https://api.samdulshop.shop/n22/food?name=${encodeURIComponent(foodName)}`;
-		//            const url = `http://ec2-43-203-204-195.ap-northeast-2.compute.amazonaws.com/n22/food?name=${encodeURIComponent(foodName)}`;
-		//            const url = `http://127.0.0.1:8765/n22/food?name=${encodeURIComponent(foodName)}`;
-				fetch(url, {
-						method: 'GET',
-					})
-					.catch(error => {
-						console.error('Error:', error);
-					});
-				});
-			</script>
 
 	</body>
 </html>
