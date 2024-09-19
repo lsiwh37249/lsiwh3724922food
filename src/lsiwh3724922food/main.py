@@ -68,8 +68,8 @@ def food(name : str):
     import pymysql
     
     # Connect to the database
-    connection = pymysql.connect(host=os.getenv(DB_IP),
-                             port=os.getenv(MY_PORT),
+    connection = pymysql.connect(host=os.getenv("DB_IP", "localhost"),
+                             port=int(os.getenv("DB_PORT", "33306")),
                              user='food',
                              password='1234',
                              database='fooddb',
