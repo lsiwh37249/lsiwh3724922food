@@ -25,7 +25,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
+    )
 
 def get_path():
     file_dir = __file__
@@ -63,6 +63,27 @@ def food(name : str):
 
     # CSV 파일 저장
     df.to_csv(csv_file_path, index=False)
-
     
+    #import pymysql.cursors
+    import pymysql
+    
+    # Connect to the database
+    connection = pymysql.connect(host=os.getenv(DB_IP),
+                             port=os.getenv(MY_PORT),
+                             user='food',
+                             password='1234',
+                             database='fooddb',
+                             charset = 'utf8',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+    with connection:
+        with connection.cursor() as cursor:
+            # Create a new record
+            sql = "INSERT INTO foodhistory(username, foodname,dt)  VALUES (%s, %s,%s)"
+            cursor.execute(sql, ('n22', name, formatted_time))
+
+        # connection is not autocommit by default. So you must commit to save
+        # your changes.
+        connection.commit()
+
     return {"food" : name, "time" : f"{formatted_time}"}
