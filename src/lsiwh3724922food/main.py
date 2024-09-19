@@ -5,6 +5,7 @@ import time
 import os
 import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
+import pytz
 
 app =FastAPI()
 
@@ -41,6 +42,8 @@ def read_root():
 def food(name : str):
     # 시간을 구함
     # 음식 이름과 시간을 csv로 저장 -> /code/data/food.csv
+    from datetime import datetime
+    time = datetime.now(pytz.timezone('Asia/Seoul'))
     formatted_time = time.strftime("%Y-%m-%d %H:%M:%S")
     new_data = f"food : {name}, time : {formatted_time}"
     
